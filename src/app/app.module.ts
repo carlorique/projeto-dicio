@@ -12,7 +12,6 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PalavraComponent } from './components/palavra/palavra.component';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,

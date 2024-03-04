@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-palavra',
   templateUrl: './palavra.component.html',
@@ -15,13 +14,16 @@ export class PalavraComponent {
   constructor(private http: HttpClient) { }
 
   async searchWord() {
-    if (!this.palavra) {
+    const wordInput = document.getElementById('word') as HTMLInputElement;
+    const word = wordInput.value;
+
+    if (!word) {
       alert('Por favor, digite uma palavra.');
       return;
     }
 
     try {
-      const encodedWord = encodeURIComponent(this.palavra);
+      const encodedWord = encodeURIComponent(word);
       const response = await this.http.get(`http://localhost:3000/search/${encodedWord}`).toPromise();
       this.result = response;
       this.displayResult();
@@ -75,13 +77,16 @@ export class PalavraComponent {
   }
 
   speakWord() {
-    if (!this.palavra) {
+    const wordInput = document.getElementById('word') as HTMLInputElement;
+    const word = wordInput.value;
+
+    if (!word) {
       alert('Por favor, digite uma palavra.');
       return;
     }
 
     const speechSynthesis = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(this.palavra);
+    const utterance = new SpeechSynthesisUtterance(word);
 
     speechSynthesis.speak(utterance);
   }
