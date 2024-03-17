@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
+
 @Component({
   selector: 'app-palavra',
   templateUrl: './palavra.component.html',
