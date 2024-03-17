@@ -4,22 +4,34 @@
 
 <header id="header" class="home">
     <div class="container">
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <div id="logo" class="logo col-xs-12 col-sm-5">
-                <h1><strong>DICIO CAIPORA</strong></h1>
-                <h1 class="logo-subtitle">Moto Academy</h1>
+        <nav class="navbar navbar-light bg-light justify-content-between align-items-center">
+            <div id="logo" class="logo col-xs-12 col-sm-5 d-flex align-items-center">
+                <!-- Adicionando a imagem do logo -->
+                <img src="assets/icons/logo.jpg" alt="Logo" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <!-- Reduzindo o tamanho e alterando a cor do texto -->
+                    <h1 style="font-size: 1.5rem; color: white;"><strong>DICIO CAIPORA</strong></h1>
+                    <h1 class="logo-subtitle" style="font-size: 1rem; color: white;">Moto Academy</h1>
+                </div>
             </div>
-            <form class="d-flex align-items-center">
-                <div class="form-group ml-auto sm-2 p-3">
-                    <input class="form-control mr-sm-2" type="text" [(ngModel)]="palavra" placeholder="Buscar no Dicionário" id="q" name="q" autocomplete="off">
+
+            <!-- Nova barra de pesquisa e botões -->
+            <form class="d-flex align-items-center" (submit)="searchWord()">
+                <!-- Nova barra de pesquisa com estilo restaurado -->
+                <div class="form-group p-3 flex-grow-1">
+                    <input type="text" placeholder="Pesquisar..." class="form-control bg-white text-gray-900 placeholder-gray-500 focus:outline-none px-4 py-2 rounded-pill" [(ngModel)]="palavra" name="q" autocomplete="off">
                 </div>
-                <div class="">
-                    <button (click)="searchWord()" class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Pesquisar</button>
-                    <button (click)="speakWord()" class="btn btn-outline-success" type="button">Ouvir <i class="bi bi-volume-up"></i></button>
-                </div>
+                <!-- Botão Pesquisar -->
+                <button type="submit" class="btn btn-outline-success bg-gray-900 text-white px-4 py-2 rounded-pill hover:bg-gray-800 transition duration-300 flex items-center justify-center">
+                    <i class="bi bi-search text-lg mr-2"></i> Pesquisar
+                </button>
+
+                <!-- Botão Ouvir -->
+                <button type="button" (click)="speakWord()" class="btn btn-outline-success bg-gray-900 text-white px-4 py-2 rounded-pill hover:bg-gray-800 transition duration-300 flex items-center justify-center ml-2">
+                    Ouvir
+                </button>
                 <span id="clear" class="clear hide"></span>
             </form>
-            
         </nav>
     </div>
     
@@ -64,7 +76,4 @@
             </div>
         </div>
     </div>
-
-
-
 </header>
