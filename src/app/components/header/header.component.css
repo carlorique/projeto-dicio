@@ -4,16 +4,16 @@ body {
 }
 
 header {
-  background-color: #FFA500; /* Laranja */
-  padding: 20px; /* Adiciona um espaçamento interno */
+  background-color: #FFA500;
+  padding: 20px;
 }
 
 .navbar {
-  background-color: transparent !important; /* Deixa a barra de navegação transparente */
+  background-color: transparent !important;
 }
 
 .form-control {
-  border-color: #FFA500; /* Laranja */
+  border-color: #FFA500;
   
 }
 
