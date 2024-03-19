@@ -11,6 +11,7 @@ import { PalavraComponent } from './components/palavra/palavra.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './components/about/about.component';
 import { RecentComponent } from './components/recent/recent.component';
+import { DiaComponent } from './components/dia/dia.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RecentComponent } from './components/recent/recent.component';
     PalavraComponent,
     AboutComponent,
     RecentComponent,
+    DiaComponent,
   ],
   imports: [
     BrowserModule,

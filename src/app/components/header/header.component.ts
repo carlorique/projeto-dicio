@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class HeaderComponent {
   palavra: string = '';
   result: any;
+  Caipora: string = 'assets/img/logo_caipora.jpg';
 
   constructor(private http: HttpClient) { }
 

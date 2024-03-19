@@ -24,7 +24,6 @@ export class RecentComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Certifique-se de cancelar a assinatura quando o componente for destruído
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }

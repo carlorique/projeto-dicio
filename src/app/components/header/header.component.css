@@ -17,13 +17,13 @@ header {
   
 }
 
-.btn-outline-success {
+.btn-outline-dark {
   color: white;
   background-color: #333;
   border-color: #333;
 }
 
-.btn-outline-success:hover {
+.btn-outline-dark:hover {
   background-color: black;
   color: white !important;
   border-color: #FFA500;
