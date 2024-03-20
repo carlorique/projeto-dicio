@@ -44,18 +44,27 @@
 
 <div class="container mt-5">
     <div class="row">
-      <div class="col-md-8" style="margin-bottom: 20px;" *ngIf="result">
+      <div class="col-md-8" style="margin-bottom: 20px;">
         <div class="card border-light" style="background-color: white; color: black;">
           <div class="card-body">
-            <h2 class="card-title text-center mb-4">Palavra: {{ result?.word }}</h2>
-            <div>
-              <p class="card-text" style="text-align: justify;"><strong>SIGNIFICADO:</strong> {{ result?.meaning }}</p>
-              <p class="card-text" style="text-align: justify;"><strong>INFORMAÇÕES ADICIONAIS:</strong> {{ result?.additionalInfo }}</p>
-              <p class="card-text" style="text-align: justify;"><strong>FRASES:</strong> {{ result?.phrases }}</p>
-              <p class="card-text" style="text-align: justify;"><strong>ANTONIMOS:</strong> {{ result?.antonyms }}</p>
-            </div>
+            <ng-container *ngIf="!searched">
+              <!-- Descrição do projeto -->
+              <h2 class="card-title text-center mb-4">Descrição do Projeto</h2>
+              <p class="card-text" style="text-align: justify;">Bem-vindo ao nosso dicionário online Caipora! Este é o projeto final do nosso curso Moto Web Academy Full-Stack, criado com Angular, TypeScript e NodeJS. Busque significados, sinônimos e antônimos de palavras com facilidade e precisão. Sinta-se à vontade para explorar e aproveitar ao máximo todas as funcionalidades que desenvolvemos com tanto cuidado e dedicação.</p>
+            </ng-container>
+            <ng-container *ngIf="searched">
+              <!-- Resultado da pesquisa -->
+              <h2 class="card-title text-center mb-4">Palavra: {{ result?.word }}</h2>
+              <div>
+                <p class="card-text" style="text-align: justify;"><strong>SIGNIFICADO:</strong> {{ result?.meaning }}</p>
+                <p class="card-text" style="text-align: justify;"><strong>INFORMAÇÕES ADICIONAIS:</strong> {{ result?.additionalInfo }}</p>
+                <p class="card-text" style="text-align: justify;"><strong>FRASES:</strong> {{ result?.phrases }}</p>
+                <p class="card-text" style="text-align: justify;"><strong>ANTONIMOS:</strong> {{ result?.antonyms }}</p>
+              </div>
+            </ng-container>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
