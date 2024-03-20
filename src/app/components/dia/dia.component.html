@@ -1,19 +1,21 @@
-<div class="container mt-5 p-5">
-  <div class="row">
-      <!-- Coluna da esquerda -->
-
-      <!-- Card "Palavra do dia" -->
-      <div class="row">
-          <div class="col-md-8">
-              <div class="mb-4">
-                  <div class="card bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                      <div class="card-body">
-                          <h5 class="card-title">Palavra do Dia</h5>
-                          <p class="card-text">{{ wordOfTheDay }}</p>
-                      </div>
-                  </div>
-              </div>
+<div class="container mt-5">
+    <div class="row justify-content-end">
+      <!-- Coluna da direita -->
+      <div class="col-md-4">
+        <!-- Card "Palavra do dia" -->
+        <div class="mb-4">
+          <div class="card bg-white border-0 rounded-lg shadow-lg">
+            <div class="card-body">
+              <h5 class="card-title text-center">Palavra do Dia</h5>
+              <p class="card-text text-center">{{ wordOfTheDay }}</p>
+              <button type="button" class="btn btn-outline-dark bg-gray-900 text-white px-4 py-2 rounded-pill hover:bg-gray-800 transition duration-300 flex items-center justify-center ml-2" (click)="speakFirstWord()">
+                <i class="bi bi-volume-up"></i>
+                Ouvir
+              </button>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>
+  
