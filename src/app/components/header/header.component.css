@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  background-color: #FFA500; /* Laranja */
+  background-color: #ffa500; /* Laranja */
   padding: 20px; /* Adiciona um espaçamento interno */
 }
 
@@ -13,8 +13,7 @@ header {
 }
 
 .form-control {
-  border-color: #FFA500; /* Laranja */
-  
+  border-color: #ffa500; /* Laranja */
 }
 
 .btn-outline-dark {
@@ -26,15 +25,23 @@ header {
 .btn-outline-dark:hover {
   background-color: black;
   color: white !important;
-  border-color: #FFA500;
+  border-color: #ffa500;
 }
 
 .card {
-  background-color: #333; 
-  
+  background-color: #333;
+
   color: white;
 }
 
 .card-header {
-  background-color: #FFA500;
+  background-color: #ffa500;
+}
+
+.table td {
+  width: 20%; /* largura card dos resultados */
+}
+
+.table th {
+  width: 50%; /*largura card dos resultados */
 }
