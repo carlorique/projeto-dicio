@@ -5,13 +5,15 @@
         <!-- Card "Palavra do dia" -->
         <div class="mb-4">
           <div class="card bg-white border-0 rounded-lg shadow-lg">
-            <div class="card-body">
-              <h5 class="card-title text-center">Palavra do Dia</h5>
-              <p class="card-text text-center">{{ wordOfTheDay }}</p>
-              <button type="button" class="btn btn-outline-dark bg-gray-900 text-white px-4 py-2 rounded-pill hover:bg-gray-800 transition duration-300 flex items-center justify-center ml-2" (click)="speakFirstWord()">
-                <i class="bi bi-volume-up"></i>
-                Ouvir
-              </button>
+            <div class="card-body text-center"> 
+                <h5 class="card-title">Palavra do Dia</h5>
+                <p class="card-text">{{ wordOfTheDay }}</p>
+                
+                <button type="button" class="btn btn-outline-dark bg-gray-333 text-white px-4 py-2 rounded-pill hover:bg-gray-800 transition duration-300" (click)="speakFirstWord()">
+                    <i class="bi bi-volume-up"></i>
+                    Ouvir
+                </button>
+                
             </div>
           </div>
         </div>
