@@ -44,32 +44,18 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-12" *ngIf="result">
-            <h2 class="ml-3">Palavra: {{ result?.word }}</h2>
-            <div class="d-flex justify-content-between px-3 mr-4">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
-                        <tbody>
-                            <tr>
-                                <td><strong>SIGNIFICADO:</strong></td>
-                                <td>{{ result?.meaning }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>INFORMAÇÕES ADICIONAIS:</strong></td>
-                                <td>{{ result?.additionalInfo }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>FRASES:</strong></td>
-                                <td>{{ result?.phrases }}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>ANTONIMOS:</strong></td>
-                                <td>{{ result?.antonyms }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+      <div class="col-md-8" style="margin-bottom: 20px;" *ngIf="result">
+        <div class="card border-light" style="background-color: white; color: black;">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Palavra: {{ result?.word }}</h2>
+            <div>
+              <p class="card-text" style="text-align: justify;"><strong>SIGNIFICADO:</strong> {{ result?.meaning }}</p>
+              <p class="card-text" style="text-align: justify;"><strong>INFORMAÇÕES ADICIONAIS:</strong> {{ result?.additionalInfo }}</p>
+              <p class="card-text" style="text-align: justify;"><strong>FRASES:</strong> {{ result?.phrases }}</p>
+              <p class="card-text" style="text-align: justify;"><strong>ANTONIMOS:</strong> {{ result?.antonyms }}</p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
