@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DayService } from 'src/app/services/day.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dia',
@@ -8,13 +6,50 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dia.component.css']
 })
 export class DiaComponent implements OnInit {
-  wordOfTheDay!: string;
-  wordOfTheDay$!: Observable<string>;
+  wordOfTheDay: string = '';
+  firstWord: string = '';
 
-  constructor(private dayService: DayService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.wordOfTheDay$ = this.dayService.getWordOfTheDay();
-    this.wordOfTheDay$.subscribe(word => this.wordOfTheDay = word);
+    this.fetchWordOfTheDay();
+  }
+
+  fetchWordOfTheDay(): void {
+    fetch('http://localhost:3000/dia')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao buscar a palavra do dia.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        const startIndex = data.indexOf('Palavra do Dia') + 'Palavra do Dia'.length;
+
+        // Captura a palavra do dia completa, removendo espaços em branco extras
+        this.wordOfTheDay = data.substring(startIndex).trim();
+
+        // Se o conteúdo não estiver vazio, captura a primeira palavra
+        if (this.wordOfTheDay) {
+          this.firstWord = this.wordOfTheDay.split(' ')[0];
+
+          // Verifica se a primeira palavra foi capturada corretamente
+          console.log('Primeira palavra capturada:', this.firstWord);
+        }
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+  }
+
+  speakFirstWord(): void {
+    if (!this.firstWord) {
+      alert('A primeira palavra está vazia.');
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(this.firstWord);
+
+    speechSynthesis.speak(utterance);
   }
 }
