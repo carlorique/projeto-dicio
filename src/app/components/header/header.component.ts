@@ -10,6 +10,7 @@ export class HeaderComponent {
   palavra: string = '';
   result: any;
   Caipora: string = 'assets/img/logo_caipora.jpg';
+  searched: boolean = false; // Variável para controlar se a pesquisa foi realizada ou não
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,7 @@ export class HeaderComponent {
       const encodedWord = encodeURIComponent(this.palavra);
       const response = await this.http.get(`http://localhost:3000/search/${encodedWord}`).toPromise();
       this.result = response;
+      this.searched = true; // Define searched como true para exibir o resultado da pesquisa
       console.log(this.result); // Verifica se os resultados foram obtidos corretamente
     } catch (error) {
       console.error(error);
