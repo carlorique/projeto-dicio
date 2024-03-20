@@ -1,35 +1,18 @@
-<div class="container mt-5 p-5">
-    <div class="row">
-      <!-- Coluna da esquerda -->
-      <div class="col-md-8">
-        <!-- Card do dicionário -->
-        <div class="mb-4"></div>
-      </div>
-  
-      <!-- Coluna da direita -->
-      <div class="col-md-4">
-        <!-- Card "10 Palavras mais pesquisadas" -->
-        <div class="mb-4">
-          <div class="card bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <div class="card-body">
-              <h5 class="card-title">Palavras mais pesquisadas</h5>
-              <ul>
-                <li *ngFor="let word of recentSearches">{{ word }}</li>
-              </ul>
-            </div>
+<div class="container mt-5">
+  <div class="row justify-content-end">
+    <!-- Coluna da direita -->
+    <div class="col-md-4">
+      <!-- Card "Palavras mais pesquisadas" -->
+      <div class="mb-4">
+        <div class="card bg-white border-0 rounded-lg shadow-lg">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Palavras mais pesquisadas</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item py-2" *ngFor="let word of recentSearches">{{ word }}</li>
+            </ul>
           </div>
         </div>
-  
-        <!-- Card "Palavra do dia" -->
-        <!-- <div class="mb-4">
-          <div class="card bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <div class="card-body">
-              <h5 class="card-title">Palavra do dia</h5>
-              <p class="card-text">{{ wordOfTheDay }}</p>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
-  
+</div>
